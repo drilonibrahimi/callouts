@@ -242,7 +242,7 @@ Resources:
   CallSqsQueue:
     Type: AWS::SQS::Queue
     Properties: 
-      FifoQueue: true
+      # FifoQueue: true
       ContentBasedDeduplication: true
       RedrivePolicy:
         deadLetterTargetArn: !GetAtt CallDeadLetterQueue.Arn
@@ -251,12 +251,12 @@ Resources:
   CallDeadLetterQueue: 
     Type: AWS::SQS::Queue
     Properties: 
-      FifoQueue: true
+      # FifoQueue: true
       ContentBasedDeduplication: true
   AsynCalloutQueue:
     Type: AWS::SQS::Queue
     Properties:
-      FifoQueue: true
+      # FifoQueue: true
       ContentBasedDeduplication: true
       RedrivePolicy: 
         deadLetterTargetArn: !GetAtt AsynCalloutDeadLetterQueue.Arn
@@ -265,7 +265,7 @@ Resources:
   AsynCalloutDeadLetterQueue: 
     Type: AWS::SQS::Queue
     Properties: 
-      FifoQueue: true
+      # FifoQueue: true
       ContentBasedDeduplication: true
 
   CallJobCompletionSNSTopic:
